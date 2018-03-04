@@ -3,10 +3,16 @@ import Songs from '../components/Songs';
 
 export default class SingleAlbum extends Component {
 
+  componentDidMount(){
+    const albumId = this.props.routeParams.albumId;
+    const selectAlbum = this.props.selectAlbum;
+  
+    selectAlbum(albumId);
+  }
+
   render () {
 
     const album = this.props.album;
-
     return (
       <div className="album">
         <div>
